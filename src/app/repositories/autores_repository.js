@@ -5,6 +5,11 @@ class AutoresRepository {
     const sql = "SELECT * FROM autores";
     return consult(sql, "Unable to query the database.");
   }
+
+  async postAutores(name, email) {
+    const sql = "INSERT INTO autores(nome, email) VALUES(?, ?)";
+    return consult(sql, [name, email], "Unable to query the database.");
+  }
 }
 
 export default new AutoresRepository();
