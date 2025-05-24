@@ -2,7 +2,7 @@ import AutoresRepository from "../repositories/autores_repository.js";
 
 class AutoresController {
   async getAutores(req, res) {
-    const row = AutoresRepository.getAutores();
+    const row = await AutoresRepository.getAutores();
     return res.json(row);
   }
 }
