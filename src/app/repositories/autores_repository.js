@@ -15,6 +15,11 @@ class AutoresRepository {
     const sql = "UPDATE autores SET ? WHERE id = ?";
     return consult(sql, [values, id], "Unable to query the database.");
   }
+
+  async deleteAutores(id) {
+    const sql = "DELETE FROM autores WHERE id =?";
+    return consult(sql, id, "Unable to query the database.");
+  }
 }
 
 export default new AutoresRepository();

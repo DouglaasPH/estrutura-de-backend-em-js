@@ -17,6 +17,12 @@ class AutoresController {
     const row = await AutoresRepository.putAutores(values, Number(id));
     return res.json(row);
   }
+
+  async deleteAutores(req, res) {
+    const { id } = req.body;
+    const row = await AutoresRepository.deleteAutores(Number(id));
+    return res.json(row);
+  }
 }
 
 export default new AutoresController();
