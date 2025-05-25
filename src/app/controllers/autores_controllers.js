@@ -11,6 +11,12 @@ class AutoresController {
     const row = await AutoresRepository.postAutores(nome, email);
     return res.json(row);
   }
+
+  async putAutores(req, res) {
+    const { values, id } = req.body;
+    const row = await AutoresRepository.putAutores(values, Number(id));
+    return res.json(row);
+  }
 }
 
 export default new AutoresController();

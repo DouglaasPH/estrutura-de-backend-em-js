@@ -10,6 +10,11 @@ class AutoresRepository {
     const sql = "INSERT INTO autores(nome, email) VALUES(?, ?)";
     return consult(sql, [name, email], "Unable to query the database.");
   }
+
+  async putAutores(values, id) {
+    const sql = "UPDATE autores SET ? WHERE id = ?";
+    return consult(sql, [values, id], "Unable to query the database.");
+  }
 }
 
 export default new AutoresRepository();

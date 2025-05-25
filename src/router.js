@@ -5,5 +5,6 @@ const router = Router();
 
 router.get("/getAutores", autores_controllers.getAutores);
 router.post("/postAutores", autores_controllers.postAutores);
+router.put("/putAutores", autores_controllers.putAutores);
 
 export default router;
